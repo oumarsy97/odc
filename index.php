@@ -10,11 +10,20 @@ $datas = [
     ["libelle"=>"the manifest","category"=>"action","year"=>"2001"]
 ];
 
+$listCategory= [];
+$listLibelle= [];
+$listDate = [];
 foreach($datas as $data){
-    $listLibelle = $data["libelle"];
-    $listCategory = $data["category"];
-    if($data["year"] >= 2010){
-        echo $data["libelle"]."<br>";
+    if(!in_array($data["category"],$listCategory)){
+        $listCategory[] = $data["category"];
+    }
+    if(!in_array($data["libelle"],$listLibelle)){
+        $listLibelle[] = $data["libelle"];
+    }
+    if(!in_array($data["year"],$listDate)){
+        $listDate[] = $data["year"];
     }
 }
-include 'lister.html';
+
+var_dump($listCategory,$listLibelle,$listDate);
+include 'lister.php';
