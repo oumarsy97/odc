@@ -63,9 +63,43 @@ function filtrerDate($liniouySeet,$tableauBiniouKayWeur){
 
 $donnee = $datas;
 
-if(isset($_POST["category"])){
-    $donnee = filtrerLibelle($_POST["category"],$datas);
+// if(isset($_POST["category"])){
+//     $donnee = filtrerLibelle($_POST["libelle"],$datas);
+// }
+//filtrer par libelle et categorie
+
+// if(isset($_POST["libelle"],$_POST["category"])){
+$cate=$_POST["category"];
+$lib=$_POST["libelle"];
+$filter=[];
+
+function filtercate($cate,$tab){
+    if($cate==="Tous"){
+
+return $tab;
+    } foreach ($tab as $film) {
+        if ( $film["category"] === $cate) {
+                     $filter[] =  $film;
 }
 
+    } $datas = $filter;
+    return $filter;
+}
+
+function filterlib($lib,$tab){
+    if($lib==="Tous"){
+
+return $tab;
+    } foreach ($tab as $film) {
+        if ( $film["libelle"] === $lib) {
+                     $filter[] =  $film;
+}
+
+    } $datas = $filter;
+    return $filter;
+}
+
+$donne=filtercate($cate,$datas);
+$donne=filterlib($lib,$donne);
 
 include 'lister.php';

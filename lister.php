@@ -36,6 +36,7 @@
     <header>
         <form action="" method="post">
             <select name="libelle" id="libelle">
+            <option value="Tous">Tous</option>
                 <?php
                     foreach($listLibelle as $data){
                         echo '<option value="'.$data.'">'.$data.'</option>';
@@ -44,6 +45,7 @@
             </select>
 
             <select name="category" id="category">
+                <option value="Tous">Tous</option>
                 <?php
                     foreach($listCategory as $data){
                         echo '<option value="'.$data.'">'.$data.'</option>';
@@ -67,7 +69,7 @@
                 </tr>
             </thead>
             <tbody>
-            <?php foreach($donnee as $data){?>
+            <?php foreach($donne as $data){?>
                         <tr>
 
                             <td><?= $data['libelle'] ?></td>
