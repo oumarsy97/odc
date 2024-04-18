@@ -24,6 +24,10 @@
             width: 100%;
             max-width: 800px;
             font-size: 1.2rem;
+            td{
+                width: 100px;
+                text-align: center;
+            }
         }
 
     </style>
@@ -33,23 +37,23 @@
         <form action="" method="post">
             <select name="libelle" id="libelle">
                 <?php
-                    foreach($datas as $data){
-                        echo '<option value="'.$data['libelle'].'">'.$data['libelle'].'</option>';
+                    foreach($listLibelle as $data){
+                        echo '<option value="'.$data.'">'.$data.'</option>';
                     }
                 ?>
             </select>
 
             <select name="category" id="category">
                 <?php
-                    foreach($datas as $data){
-                        echo '<option value="'.$data['category'].'">'.$data['category'].'</option>';
+                    foreach($listCategory as $data){
+                        echo '<option value="'.$data.'">'.$data.'</option>';
                     }
                 ?>
             </select>
             <select name="annee" id="annee">
-                <?php
-                    foreach($datas as $data){
-                        echo '<option value="'.$data['annee'].'">'.$data['annee'].'</option>';
+                <?phpannee
+                    foreach($listDate as $data){
+                        echo '<option value="'.$data.'">'.$data.'</option>';
                     }
                 ?>
             </select>
@@ -58,19 +62,18 @@
     <main>
         <table>
             <thead>
-                <tr>
-                    <th>libelle</th>
-                    <th>category</th>
-                    <th>annee de publication</th>
+                <tr><th>Libelle</th><th>Catégorie</th><th>Année</th>
                 </tr>
             </thead>
             <tbody>
-                <?php var_dump($datas); ?>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+            <?php foreach($datas as $data){?>
+                        <tr>
+
+                            <td><?= $data['libelle'] ?></td>
+                            <td><?= $data['category'] ?></td>
+                            <td><?= $data['year'] ?></td>
+                        </tr>
+                            <?php }?>
             </tbody>
         </table>
     </main>

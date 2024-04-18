@@ -25,5 +25,5 @@ foreach($datas as $data){
     }
 }
 
-var_dump($listCategory,$listLibelle,$listDate);
+
 include 'lister.php';
