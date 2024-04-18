@@ -48,6 +48,16 @@ function filtrerCategory($liniouySeet,$tableauBiniouKayWeur){
 
     return $tableauBiniouKayDeff;
 }
+function filtreryear($liniouySeet,$tableauBiniouKayWeur){
+    $tableauBiniouKayDeff = [];
+    foreach($tableauBiniouKayWeur as $ligneBii){
+        if($ligneBii["year"] == $liniouySeet){
+            $tableauBiniouKayDeff[] = $ligneBii;
+        }
+    }
+
+    return $tableauBiniouKayDeff;
+}
 
 function filtrerDate($liniouySeet,$tableauBiniouKayWeur){
     
@@ -60,12 +70,12 @@ function filtrerDate($liniouySeet,$tableauBiniouKayWeur){
 
     return $tableauBiniouKayDeff;
 }
-
 $donnee = $datas;
-
 if(isset($_POST["category"])){
-    $donnee = filtrerLibelle($_POST["category"],$datas);
+    $donnee = filtrerCategory($_POST["category"],$datas);
 }
+
+
 
 
 include 'lister.php';
