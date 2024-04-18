@@ -51,12 +51,13 @@
                 ?>
             </select>
             <select name="annee" id="annee">
-                <?phpannee
+                <?php
                     foreach($listDate as $data){
                         echo '<option value="'.$data.'">'.$data.'</option>';
                     }
                 ?>
             </select>
+            <input type="submit" value="Valider">
         </form>
     </header>
     <main>
