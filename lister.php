@@ -50,7 +50,7 @@
                     }
                 ?>
             </select>
-            <select name="annee" id="annee">
+            <select name="year" id="annee">
                 <?php
                     foreach($listDate as $data){
                         echo '<option value="'.$data.'">'.$data.'</option>';
