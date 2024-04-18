@@ -50,9 +50,7 @@ function filtrerCategory($liniouySeet,$tableauBiniouKayWeur){
 }
 
 function filtrerDate($liniouySeet,$tableauBiniouKayWeur){
-    if($liniouySeet == "all"){
-        return $tableauBiniouKayWeur;
-    }
+    
     $tableauBiniouKayDeff = [];
     foreach($tableauBiniouKayWeur as $ligneBii){
         if($ligneBii["year"] == $liniouySeet){
@@ -63,8 +61,8 @@ function filtrerDate($liniouySeet,$tableauBiniouKayWeur){
     return $tableauBiniouKayDeff;
 }
 
+$donnee = $datas;
 
-$donnee = filtrerLibelle("action",$datas);
 if(isset($_POST["category"])){
     $donnee = filtrerLibelle($_POST["category"],$datas);
 }
