@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        body{
+
+        body {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -18,43 +20,44 @@
             height: 100vh;
         }
 
-        table{
+        table {
             border-collapse: collapse;
             border: 1px solid #ccc;
             width: 100%;
             max-width: 800px;
             font-size: 1.2rem;
-            td{
+
+            td {
                 width: 100px;
                 text-align: center;
             }
         }
-
     </style>
 </head>
+
 <body>
     <header>
         <form action="" method="post">
             <select name="libelle" id="libelle">
                 <?php
-                    foreach($listLibelle as $data){
-                        echo '<option value="'.$data.'">'.$data.'</option>';
-                    }
+                foreach ($listLibelle as $data) {
+                    echo '<option value="' . $data . '">' . $data . '</option>';
+                }
                 ?>
             </select>
 
             <select name="category" id="category">
                 <?php
-                    foreach($listCategory as $data){
-                        echo '<option value="'.$data.'">'.$data.'</option>';
-                    }
+                foreach ($listCategory as $data) {
+                    echo '<option value="' . $data . '">' . $data . '</option>';
+                }
                 ?>
             </select>
-            <select name="annee" id="annee">
+            <select name="year" id="annee">
                 <?php
-                    foreach($listDate as $data){
-                        echo '<option value="'.$data.'">'.$data.'</option>';
-                    }
+                foreach ($listDate as $data) {
+                    echo '<option value="' . $data . '">' . $data . '</option>';
+                }
                 ?>
             </select>
             <input type="submit" value="Valider">
@@ -63,20 +66,24 @@
     <main>
         <table>
             <thead>
-                <tr><th>Libelle</th><th>Catégorie</th><th>Année</th>
+                <tr>
+                    <th>Libelle</th>
+                    <th>Catégorie</th>
+                    <th>Année</th>
                 </tr>
             </thead>
             <tbody>
-            <?php foreach($donnee as $data){?>
-                        <tr>
+                <?php foreach ($donnee as $data) { ?>
+                    <tr>
 
-                            <td><?= $data['libelle'] ?></td>
-                            <td><?= $data['category'] ?></td>
-                            <td><?= $data['year'] ?></td>
-                        </tr>
-                            <?php }?>
+                        <td><?= $data['libelle'] ?></td>
+                        <td><?= $data['category'] ?></td>
+                        <td><?= $data['year'] ?></td>
+                    </tr>
+                <?php } ?>
             </tbody>
         </table>
     </main>
 </body>
+
 </html>
