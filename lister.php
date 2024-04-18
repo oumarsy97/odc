@@ -28,7 +28,32 @@
     </style>
 </head>
 <body>
-    <header></header>
+    <header>
+        <form action="" method="post">
+            <select name="libelle" id="libelle">
+                <?php
+                    foreach($datas as $data){
+                        echo '<option value="'.$data['libelle'].'">'.$data['libelle'].'</option>';
+                    }
+                ?>
+            </select>
+
+            <select name="category" id="category">
+                <?php
+                    foreach($datas as $data){
+                        echo '<option value="'.$data['category'].'">'.$data['category'].'</option>';
+                    }
+                ?>
+            </select>
+            <select name="annee" id="annee">
+                <?php
+                    foreach($datas as $data){
+                        echo '<option value="'.$data['annee'].'">'.$data['annee'].'</option>';
+                    }
+                ?>
+            </select>
+        </form>
+    </header>
     <main>
         <table>
             <thead>

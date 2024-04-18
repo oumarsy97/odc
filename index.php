@@ -9,4 +9,12 @@ $datas = [
     ["libelle"=>"naruto","category"=>"manga","year"=>"2005"],
     ["libelle"=>"the manifest","category"=>"action","year"=>"2001"]
 ];
+
+foreach($datas as $data){
+    $listLibelle = $data["libelle"];
+    $listCategory = $data["category"];
+    if($data["year"] >= 2010){
+        echo $data["libelle"]."<br>";
+    }
+}
 include 'lister.html';
