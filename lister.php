@@ -67,7 +67,7 @@
                 </tr>
             </thead>
             <tbody>
-            <?php foreach($datas as $data){?>
+            <?php foreach($donnee as $data){?>
                         <tr>
 
                             <td><?= $data['libelle'] ?></td>
